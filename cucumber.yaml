@@ -1,0 +1,10 @@
+# config/cucumber.yaml
+
+  <% test_batch_id = "#{ENV['TEST_ENV_NUMBER']}" %>
+
+default: >
+  --publish-quiet
+  --format pretty
+  --format json --out reports/report_<%= ENV['TEST_ENV_NUMBER'] %>.json
+  --format html --out reports/report_<%= ENV['TEST_ENV_NUMBER'] %>.html
+  --format junit --out reports/junit_<%= ENV['TEST_ENV_NUMBER'] %>/
